@@ -1,0 +1,8 @@
+build/
+build-*/
+latex-code/
+.DS_Store
+*.elf
+*.bin
+*.map
+sdkconfig.old

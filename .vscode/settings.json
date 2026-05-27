@@ -1,0 +1,16 @@
+{
+  "idf.espIdfPath": "${env:IDF_PATH}",
+  "idf.toolsPath": "${env:HOME}/.espressif",
+  "idf.pythonEnvPath": "${env:HOME}/.espressif/python_env/idf5.5_py3.12_env",
+  "idf.pythonBinPath": "${env:HOME}/.espressif/python_env/idf5.5_py3.12_env/bin/python",
+  "idf.port": "/dev/ttyTAG",
+  "idf.adapterTargetName": "esp32c3",
+  "idf.openOcdConfigs": ["interface/esp_usb_jtag.cfg","target/esp32c3.cfg"],
+  "idf.flashBaudRate": 921600,
+  "idf.monitorBaudRate": 115200,
+  "cmake.generator": "Ninja",
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "files.associations": { "sdkconfig": "properties" },
+  "cmake.configureOnOpen": true,
+  "idf.pythonInstallPath": "/usr/bin/python3"
+}

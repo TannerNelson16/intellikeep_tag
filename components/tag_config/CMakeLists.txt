@@ -1,0 +1,25 @@
+idf_component_register(
+    SRCS "tag_config.c"
+    INCLUDE_DIRS "include"
+    REQUIRES nvs_flash
+)
+
+if(TAG_BEHAVIOR_VARIANT STREQUAL "demo")
+    target_compile_definitions(${COMPONENT_LIB} PRIVATE
+        TAG_BEHAVIOR_VARIANT=2
+        TAG_BEHAVIOR_VARIANT_STANDARD=1
+        TAG_BEHAVIOR_VARIANT_DEMO=2
+        TAG_DEFAULT_WAKE_PERIOD_US=5000000ULL
+        TAG_DEFAULT_ADV_WINDOW_MS=4000U
+        TAG_DEFAULT_NAME="DemoTag"
+    )
+else()
+    target_compile_definitions(${COMPONENT_LIB} PRIVATE
+        TAG_BEHAVIOR_VARIANT=1
+        TAG_BEHAVIOR_VARIANT_STANDARD=1
+        TAG_BEHAVIOR_VARIANT_DEMO=2
+        TAG_DEFAULT_WAKE_PERIOD_US=300000000ULL
+        TAG_DEFAULT_ADV_WINDOW_MS=75U
+        TAG_DEFAULT_NAME="Tag"
+    )
+endif()
